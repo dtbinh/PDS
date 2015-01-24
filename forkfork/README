@@ -1,0 +1,32 @@
+Noms : MOEVI Alexandre - TOMMASI Marion
+Date : 24 octobre 2014
+Sujet : TP5 - Clonage et gestion des processus
+
+----------------------------------------------------------------
+
+Utilisation 
+
+"make" ou "make plot" lance la totalité du programme c'est-à-dire de la compilation à la création des fichiers texte.
+
+"make clean" nettoie le répertoire et ne laisse que les fichiers source.
+
+"./race" lance la course des 10 processus fils tandis que "./forkfork" illustre la technique du double fork.
+
+"./multiprocess" répond à la question 7 (observation des processus) mais connaît quelques problèmes à l'utilisation. 
+
+----------------------------------------------------------------
+
+Remarques
+
+En ce qui concerne la saisie clavier relative à l'éxécution de multiprocess, les premières (5 ou 6) saisies sont mal interprétés. Un exemple de trace est :
+
+Le fils 3398 est toujours là
+kill -9 3398
+sh: 1: kill: Usage: kill [-s sigspec | -signum | -sigspec] [pid | job]... or
+kill -l [exitstatus]
+sh: 1: kill: Usage: kill [-s sigspec | -signum | -sigspec] [pid | job]... or
+kill -l [exitstatus]
+sh: 0: Illegal option -9
+sh: 1: 3398: not found
+
+Cependant, les suivantes fonctionnent (kill -9 XXXX ou kill XXXX) et les processus fils sont effectivement tués. 

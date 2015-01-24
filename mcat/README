@@ -1,0 +1,21 @@
+Noms : MOEVI Alexandre - TOMMASI Marion
+Date : 17 octobre 2014
+Sujet : TP4 - Influence de la taille des tampons
+
+----------------------------------------------------------------
+
+Utilisation 
+
+"make" ou "make plot" lance la totalité du programme c'est-à-dire de la compilation au tracé de la courbe avec le fichier .dat. Si certains fichiers sont déjà créés, ils ne sont pas écrasés et make passe à l'étape suivante.
+
+"make run" lance la série de tests avec mcat.sh et écrit les résultats dans mcat-tm.dat.
+
+"make clean" nettoie le répertoire.
+
+----------------------------------------------------------------
+
+Remarques 
+
+Même s'il n'existe pas de taille exacte pour un tampon parfait, on constate grâce, au fichier mcat-tm.dat, qu'une taille de tampon convenable pour obtenir des performances satisfaisantes avec un ordinateur est de plusieurs kilo-octets (de 64 à 512 ko), voire un mégaoctet.
+
+Un tampon trop petit entraîne un nombre conséquent d'appels système, ce qui ralentit fortement l'éxecution du code. C'est ce qui explique pourquoi les tampons de taille minime sont moins performants que les tampons de taille importante (plusieurs Mo), même si ces derniers obtiennent des résultats légèrement inférieurs à ceux de taille moyenne.

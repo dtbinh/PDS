@@ -1,0 +1,20 @@
+.\" J'ai essayé de faire un man
+.\" La machine n'aime pas : yes "firefox &" | bash
+.TH man 8 "11 décembre 2014" "1.0" "Commentaires mtcs"
+.SH AUTEUR
+MOEVI Alexandre - TOMMASI Marion
+.SH COMMANDES ET OPTIONS
+.nf
+mtcs
+mtcs -v pour une version verbeuse (comme du JAVA)
+.SH UTILISATION
+L'utilisation de plusieurs terminaux est recommandé pour simuler le host ainsi que le(s) différent(s) client(s). Un autre terminal est nécessaire pour envoyer le signal 
+.B SIGUSR1
+au processus hôte (pid à trouver avec la commande
+.I ps -e | grep mtcs
+).
+.SH COMMENTAIRES
+.PP
+Le chat est fonctionnel et résiste à différents assauts (yes). L'accès aux statistiques fonctionne également, même pendant un spam. Cependant, le client qui a le plus envoyé de lignes et celui qui en a le plus lu sont codés sous forme d'entier (fd qui correspondent aux entiers retournés par la fonction accept) et non par des chaînes de caractères. C'aurait été possible de l'implémenter
+.PP
+Les verrous mutex ont été posés mais l'aspect sécurité et intégrité des données a été étudié sans être approfondi.

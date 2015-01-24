@@ -1,0 +1,17 @@
+Noms : MOEVI Alexandre - TOMMASI Marion
+Date : 14 novembre 2014
+Sujet : mshell - Première partie
+
+----------------------------------------------------------------
+
+Utilisation 
+
+"make" ou "make all" lance la compilation des fichiers nécessaires et la création du mini-shell.
+
+"./mshell" lance le mini-shell.
+
+----------------------------------------------------------------
+
+Remarques
+
+Les traitants de signal (sigint_handler, sigstp_handler, sigchld_handler et signal_wrapper) sont implémentés ainsi que toutes les commandes du mini-shell. Les commandes
